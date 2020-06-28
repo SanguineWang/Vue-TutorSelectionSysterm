@@ -9,6 +9,12 @@ module.exports = {
   },
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off"
+    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "no-unused-vars": [2, { 
+      // 允许声明未使用变量
+      "vars": "local",
+      // 参数不检查
+      "args": "none" 
+    }],
   }
 };

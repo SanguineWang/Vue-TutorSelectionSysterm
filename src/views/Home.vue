@@ -3,7 +3,7 @@
     <v-row>
       <v-col :align="alignment">
         <HelloWorld msg="Welcome to Tutor Selection System" />
-        <p>{{ login }}</p>
+        <!-- <p>{{ login }}</p> -->
       </v-col>
     </v-row>
   </v-container>

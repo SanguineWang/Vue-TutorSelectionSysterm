@@ -44,9 +44,7 @@
               </v-col>
             </v-row>
           </v-container>
-          <small
-            >*Please confirm that you are using your own account {{ user }}
-          </small>
+          <small>*Please confirm that you are using your own account </small>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -61,7 +59,6 @@
 import { USER_LOGIN } from "../store/type";
 // import axios from "../axios/myAxios";
 export default {
-  name: "myDialog",
   data() {
     return {
       isShow: false,
@@ -81,15 +78,23 @@ export default {
   },
   //data只加载一次，异步过来的数据，需要watch他才能得到
   components: {},
-  created() {},
+  created() {
+    this.setPassWord();
+  },
   mounted() {},
   methods: {
     login() {
       console.log("click login");
-      // var path =
-      //   this.user.password == "" ? "/reception" : "/backstage/settings";
-      // this.isShow = false;
-      this.$store.dispatch(USER_LOGIN, this.user);
+      //登录之后刷新，让路由守卫拦截到
+      this.$store.dispatch(USER_LOGIN, this.user).then(() => {
+        this.isShow = false;
+        this.$router.go(0);
+      });
+    },
+    setPassWord() {
+      if (this.role == "teacher") {
+        this.user.password = null;
+      }
     }
   }
 };

@@ -1,6 +1,11 @@
 <template>
   <div class="mystudens">
+    <!-- 添加 -->
     <v-row>
+      <v-toolbar-title
+        ><h1>MyStudens</h1>
+        <h6>双选结果，指导的学生</h6>
+      </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn class="mx-2" color="secondary" @click="openAddDialog">
         <v-icon>person_add</v-icon>addStudent
@@ -57,10 +62,10 @@
           <v-icon>check</v-icon>Submit
         </v-btn>
       </v-col>
-      {{ students }}
-      {{ removelist }}
+      <!-- {{ students }}
+      {{ removelist }} -->
     </v-row>
-    <!-- 添加对话框 -->
+    <!-- 添加的对话框 -->
     <v-dialog v-model="dialog" persistent max-width="600px">
       <v-card>
         <v-card-title>
@@ -99,8 +104,8 @@
                   <v-icon>check</v-icon>Submit
                 </v-btn>
               </v-col>
-              {{ user }}
-              {{ removelist }}
+              <!-- {{ user }} -->
+              <!-- {{ removelist }} -->
             </v-row>
           </v-container>
         </v-form>

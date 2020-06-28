@@ -20,10 +20,6 @@
 // @ is an alias to /src
 import AppBar from "@/components/AppBar.vue";
 import Footer from "@/components/Footer.vue";
-// import Home from "./views/Home";
-// import { role } from "./store/type";
-// import { teacherRole } from "./store/type";
-// import { studentRole } from "./store/type";
 export default {
   name: "Home",
   components: {

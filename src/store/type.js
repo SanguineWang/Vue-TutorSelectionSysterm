@@ -1,5 +1,3 @@
-export const LIST_COURSES = "listCourses";
-export const GET_COURSE = "getCourse";
 export const LIST_DIRECTIONS = "lsitDirections";
 export const GET_DIRECTION = "getDIRECTION";
 

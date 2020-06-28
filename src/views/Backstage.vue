@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-col>
       <v-progress-linear :buffer-value="finish" stream height="25" color="cyan">
-        <strong> 已完成{{ finish }}%</strong>
+        <strong> 已选 {{ selected }}:{{ limited }} </strong>
       </v-progress-linear>
     </v-col>
     <v-row>
@@ -19,12 +19,13 @@
 
 <script>
 import Drawer from "@/components/Drawer.vue";
+import axios from "@/axios/myAxios.js";
 export default {
   name: "backstage",
   data() {
     return {
-      init: 10,
-      selected: 5
+      limited: 10,
+      selected: 0
     };
   },
   components: {
@@ -32,12 +33,20 @@ export default {
   },
   computed: {
     finish() {
-      return (this.selected / this.init) * (100).toFixed(2);
+      return (this.selected / this.limited) * (100).toFixed(2);
     }
   },
-  created() {},
+  created() {
+    this.getLimitedAndSelected();
+  },
   mounted() {},
-  methods: {}
+  methods: {
+    async getLimitedAndSelected() {
+      let resp = await axios.get("teacher/selected");
+      this.limited = resp.data.limited;
+      this.selected = resp.data.selected;
+    }
+  }
 };
 </script>
 <style scoped></style>

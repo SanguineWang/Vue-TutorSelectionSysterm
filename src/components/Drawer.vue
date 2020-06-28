@@ -36,7 +36,8 @@ export default {
         { title: "Course", icon: "dashboard", path: "/backstage/courses" },
         { title: "Direction", icon: "gavel", path: "/backstage/directions" },
         { title: "Settings", icon: "account_box", path: "/backstage/settings" },
-        { title: "MyStudents", icon: "face", path: "/backstage/mystudents" }
+        { title: "MyStudents", icon: "face", path: "/backstage/mystudents" },
+        { title: "UpdatePassword", icon: "vpn_key", path: "/backstage/uppw" }
       ]
     };
   },
@@ -46,8 +47,9 @@ export default {
   methods: {
     logout() {
       console.log("click logout");
-      this.$store.dispatch(USER_LOGOUT);
-      this.$router.push("/");
+      this.$store.dispatch(USER_LOGOUT).then(() => {
+        this.$router.push("/");
+      });
     },
     routeTo(path) {
       this.$router.push(path);

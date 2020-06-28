@@ -12,7 +12,7 @@
       </template>
       <template v-if="!login">
         <v-spacer></v-spacer>
-        <Dialog role="teacher" />
+        <LoginDialog role="teacher" />
       </template>
     </v-app-bar>
   </div>
@@ -20,7 +20,7 @@
 
 <script>
 import { mapState } from "vuex";
-import Dialog from "@/components/Dialog.vue";
+import LoginDialog from "@/components/LoginDialog.vue";
 import { userNumber } from "../store/type";
 export default {
   name: "appbar",
@@ -28,7 +28,7 @@ export default {
     return {};
   },
   components: {
-    Dialog
+    LoginDialog
   },
   computed: {
     ...mapState(["login"]),

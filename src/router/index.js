@@ -39,12 +39,21 @@ let adminRouters = [
         component: () => import("../views/bsview/DirectionList.vue")
       },
       {
+        props: true,
+        path: "directions/:did",
+        component: () => import("../views/bsview/DirectionDetail.vue")
+      },
+      {
         path: "settings",
         component: () => import("../views/bsview/Settings.vue")
       },
       {
         path: "mystudents",
         component: () => import("../views/bsview/MyStudents.vue")
+      },
+      {
+        path: "uppw",
+        component: () => import("../views/bsview/UpdatePassword.vue")
       }
     ]
   }

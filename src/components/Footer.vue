@@ -1,5 +1,5 @@
 <template>
-  <div class="myfooter">
+  <div class="ma-2">
     <v-footer absolute color="secondary">
       <v-spacer></v-spacer>
 
@@ -15,7 +15,6 @@
 
 <script>
 export default {
-  name: "myfooter",
   data() {
     return {};
   },
